@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Reader Pro | Cognitive Engine</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+        <i data-feather="moon" id="theme-icon"></i>
+    </button>
+
+    <!-- LANDING EXPERIENCE -->
+    <div id="landing-view" class="landing-view">
+        <div class="ambient-glow"></div>
+        <div class="landing-content">
+            <div class="brand-chip">v3.0 ENTERPRISE</div>
+            <h1 class="landing-title">Mind Reader Pro</h1>
+            <h2 class="landing-subtitle">Cognitive Reconstruction Engine</h2>
+            <p class="landing-desc">A system designed to reconstruct human thought patterns using deterministic intelligence and associative mathematics.</p>
+            <div class="landing-actions">
+                <button id="start-exp-btn" class="btn btn-primary btn-xl">Start Experience <i data-feather="arrow-right"></i></button>
+                <button id="how-btn" class="btn btn-outline btn-xl"><i data-feather="help-circle"></i> How It Works</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works Modal -->
+    <div id="how-modal" class="modal hidden">
+        <div class="modal-content glass-panel premium-modal doc-panel">
+            <div class="modal-header doc-header">
+                <div class="header-titles">
+                    <h3><i data-feather="cpu"></i> System Architecture</h3>
+                    <p class="doc-subtitle">Deterministic Reconstruction Model</p>
+                </div>
+                <button id="close-modal-btn" class="btn-icon close-doc-btn"><i data-feather="x"></i></button>
+            </div>
+            
+            <div class="modal-body doc-body">
+                <p class="modal-intro">
+                    The Engine operates strictly on deterministic mathematical reversal principles. 
+                    It enforces a secure workflow to compute cognitive seeds logically.
+                </p>
+                
+                <div class="architecture-steps-grid">
+                    <!-- Step 01 -->
+                    <div class="arch-card">
+                        <div class="card-top">
+                            <span class="step-badge">01</span>
+                            <div class="step-icon"><i data-feather="lock"></i></div>
+                        </div>
+                        <h4 class="card-title">Constant Injection</h4>
+                        <p class="card-desc">A secure spatial variable is generated and placed into internal temporary memory.</p>
+                        <div class="code-highlight">
+                            <code>Variable: N</code>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 02 -->
+                    <div class="arch-card">
+                        <div class="card-top">
+                            <span class="step-badge">02</span>
+                            <div class="step-icon"><i data-feather="settings"></i></div>
+                        </div>
+                        <h4 class="card-title">User Transformation</h4>
+                        <p class="card-desc">You apply sequential mathematical operations to your numerical base.</p>
+                        <div class="code-highlight">
+                            <code>Formula: ((x * 2) + N) / 2</code>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 03 -->
+                    <div class="arch-card">
+                        <div class="card-top">
+                            <span class="step-badge">03</span>
+                            <div class="step-icon"><i data-feather="zap"></i></div>
+                        </div>
+                        <h4 class="card-title">Engine Reconstruction</h4>
+                        <p class="card-desc">We retrieve your final result (Y) and reverse the exact equation flow.</p>
+                        <div class="code-highlight highlight-primary">
+                            <code>Logic: x = Y - (N / 2)</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-footer-box">
+                    <i data-feather="check-circle" class="insight-icon"></i>
+                    <p>This system guarantees deterministic reconstruction when transformations are followed correctly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN APP EXPERIENCE -->
+    <div id="app-view" class="app-view hidden">
+        
+        <!-- Sticky Top Bar -->
+        <header class="top-nav glass-panel">
+            <div class="nav-left">
+                <div class="nav-logo">
+                    <i data-feather="cpu"></i>
+                </div>
+                <span class="nav-title">Cognitive Engine</span>
+            </div>
+            
+            <div class="nav-center sys-status">
+                <span class="status-dot IDLE" id="status-dot"></span>
+                <span class="status-text code-font" id="status-text">STATUS: IDLE</span>
+            </div>
+            
+            <div class="nav-right">
+                <span class="mode-badge" id="current-mode-badge">Advanced Mode</span>
+                <button id="sys-reset-btn" class="btn-icon" title="Reset System"><i data-feather="refresh-cw"></i></button>
+            </div>
+        </header>
+
+        <!-- Dynamic Product Layout -->
+        <main class="product-layout">
+            
+            <!-- LEFT: Controls & Timeline -->
+            <aside class="layout-left">
+                <div class="glass-panel content-box">
+                    <div class="panel-header">
+                        <i data-feather="settings"></i>
+                        <h3 class="panel-title">Configuration</h3>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Processing Mode</label>
+                        <div class="select-wrapper">
+                            <select id="mode-select" class="premium-select">
+                                <option value="basic">Basic (Simple)</option>
+                                <option value="advanced" selected>Advanced (Dynamic)</option>
+                                <option value="debug">Transparency (Debug)</option>
+                            </select>
+                            <i data-feather="chevron-down" class="select-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel content-box flex-auto mt-4">
+                    <div class="panel-header">
+                        <i data-feather="clock"></i>
+                        <h3 class="panel-title">Timeline</h3>
+                    </div>
+                    <div class="timeline" id="history-timeline">
+                        <div class="empty-state">
+                            <i data-feather="inbox" class="empty-icon"></i>
+                            <p>No cognitive reconstructions yet.</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- CENTER: Active Process (Hero) -->
+            <section class="layout-center">
+                <div class="glass-panel hero-panel" id="hero-panel">
+                    
+                    <div class="hero-header">
+                        <h2 class="hero-phase code-font" id="hero-phase-text">Phase 1: Initialization</h2>
+                        <div class="progress-indicator" id="progress-indicator">
+                            <span id="step-count">Standby</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-content">
+                        
+                        <!-- IDLE / INTRO VIEW -->
+                        <div id="view-idle" class="hero-view active-view">
+                            <div class="pulse-ring-wrapper">
+                                <i data-feather="activity" class="hero-icon"></i>
+                                <div class="ring"></div>
+                            </div>
+                            <h3 class="view-title">System Ready</h3>
+                            <p class="view-prompt">Awaiting authorization to establish neural synchronization protocol.</p>
+                            <button id="init-btn" class="btn btn-primary btn-lg mt-4">
+                                <i data-feather="zap"></i> Initialize Sequence
+                            </button>
+                        </div>
+
+                        <!-- STEPS VIEW -->
+                        <div id="view-steps" class="hero-view hidden-view align-left">
+                            <div class="steps-list" id="steps-list"></div>
+                            
+                            <div class="input-inline hidden mt-4" id="inline-input-group">
+                                <label class="input-label code-font">> Enter the parsed numerical outcome (Y):</label>
+                                <div class="input-flex">
+                                    <div class="input-box">
+                                        <i data-feather="terminal" class="input-icon"></i>
+                                        <input type="number" id="y-input" step="any" placeholder="0.00" autocomplete="off">
+                                    </div>
+                                    <button class="btn btn-primary" id="extract-btn">Extract <i data-feather="arrow-right"></i></button>
+                                </div>
+                                <p class="error-msg hidden" id="err-msg">Invalid format.</p>
+                            </div>
+                            
+                            <div class="action-row mt-4">
+                                <button id="next-step-btn" class="btn btn-secondary">Following Step <i data-feather="chevron-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- LOADING VIEW -->
+                        <div id="view-loading" class="hero-view hidden-view">
+                            <div class="premium-loader">
+                                <svg class="circular-loader" viewBox="25 25 50 50">
+                                    <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                                </svg>
+                            </div>
+                            <h3 class="view-title mt-4">Processing Data</h3>
+                            <p class="view-prompt code-font" id="loader-subtext">Executing reverse algorithm...</p>
+                        </div>
+
+                        <!-- REVEAL VIEW -->
+                        <div id="view-reveal" class="hero-view hidden-view reveal-view">
+                            <div class="reveal-badge"><i data-feather="check-circle"></i> THOUGHT ISOLATED</div>
+                            <p class="reveal-sub">Calculated Original Seed</p>
+                            <div class="number-showcase">
+                                <h1 class="reveal-number" id="rev-number">0</h1>
+                            </div>
+                            <button id="run-again-btn" class="btn btn-outline mt-5"><i data-feather="rotate-ccw"></i> Run Another Sequence</button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- RIGHT: Insights Panel -->
+            <aside class="layout-right">
+                <div class="glass-panel content-box h-100 insights-container">
+                    <div class="panel-header">
+                        <i data-feather="bar-chart-2"></i>
+                        <h3 class="panel-title">System Insights</h3>
+                    </div>
+                    
+                    <div id="insights-empty" class="insights-empty">
+                        <div class="hologram-circle"></div>
+                        <p>Awaiting reconstruction data for analytics rendering.</p>
+                    </div>
+
+                    <div id="insights-data" class="insights-data hidden">
+                        <!-- Confidence Meter -->
+                        <div class="insight-block">
+                            <div class="insight-flex">
+                                <span class="insight-label">Confidence Score</span>
+                                <span class="conf-text code-font" id="ins-conf">0%</span>
+                            </div>
+                            <div class="conf-meter mt-2">
+                                <div class="conf-fill" id="conf-fill"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Core Equation -->
+                        <div class="insight-block mt-4">
+                            <span class="insight-label">Logic Engine</span>
+                            <div class="insight-value code-font highlight-card" id="ins-equation">x = y - (N / 2)</div>
+                        </div>
+                        
+                        <!-- N Value -->
+                        <div class="insight-block mt-4">
+                            <span class="insight-label">Parsed Spatial Variable (N)</span>
+                            <div class="insight-value code-font" id="ins-n">--</div>
+                        </div>
+
+                        <!-- Explanation -->
+                        <div class="insight-block mt-4">
+                            <span class="insight-label">Analysis Log</span>
+                            <div class="explanation-scroll code-font" id="ins-desc">...</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            
+        </main>
+    </div>
+
+    <!-- Init icons -->
+    <script>feather.replace();</script>
+    <script src="script.js"></script>
+</body>
+</html>
